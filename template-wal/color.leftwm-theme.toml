@@ -1,0 +1,5 @@
+border_width = 6
+margin = [4, 4]
+default_border_color = "{background}"
+floating_border_color = "{color2}"
+focused_border_color = "{color5}"
