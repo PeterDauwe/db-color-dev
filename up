@@ -62,12 +62,10 @@ elif [ -x "$(command -v compton)" ]; then
   compton --config $HOME/.config/leftwm/themes/current/compton.conf &> /dev/null &
 fi
 
+sh $SCRIPTPATH/scripts/wal.sh
+
 #Set the theme.toml config
-#echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
-
-
-sh $SCRIPTPATH/scripts/wal.sh &
-
+echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
 #mainbar
 index=0
@@ -79,3 +77,4 @@ do
   monitor=${monitors[index]} width=$(( width - 16 )) polybar -c "$SCRIPTPATH"/polybar/polybarbottom.config $barname &> /dev/null &
   let index=index+1
 done
+
