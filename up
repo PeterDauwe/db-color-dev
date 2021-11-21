@@ -62,17 +62,11 @@ elif [ -x "$(command -v compton)" ]; then
   compton --config $HOME/.config/leftwm/themes/current/compton.conf &> /dev/null &
 fi
 
-#sh $SCRIPTPATH/scripts/wal.sh &
+#Set the theme.toml config
+#echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
 
-# Set the theme.toml config
-echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
-
-# Set background
-if [ -x "$(command -v feh)" ]; then
-  feh --randomize --bg-fill /usr/share/backgrounds/*
-fi
-
+sh $SCRIPTPATH/scripts/wal.sh &
 
 
 #mainbar
@@ -85,13 +79,3 @@ do
   monitor=${monitors[index]} width=$(( width - 16 )) polybar -c "$SCRIPTPATH"/polybar/polybarbottom.config $barname &> /dev/null &
   let index=index+1
 done
-
-
-##index=0
-##leftwm-state -q -n -t "$SCRIPTPATH"/sizes.liquid | sed -r '/^\s*$/d' | while read -r width
-##do
-##  barname="mainbar$index"
-##  monitor="$(polybar -m | awk -v i="$(( index + 1 ))" 'NR==i{print}' | sed s/:.*// | tr -d '\n')"
-##  monitor=$monitor width=$(( width - 16 )) polybar -c "$SCRIPTPATH"/polybar.config $barname &
-##  index=$((index+1))
-##done

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+
 ### Check if python-pywal is installed
 ### Check if dir exists and copy the template in its proper place
 if [ -x "$(command -v wal)" ]; then
@@ -11,9 +12,12 @@ if [ -x "$(command -v wal)" ]; then
         cp -f $HOME/.config/leftwm/themes/current/template-wal/color.leftwm-theme.toml  $HOME/.config/wal/templates
   fi
     my_array=(/usr/share/backgrounds/*)
-    wal -t -e -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]}
+    #wal -t -e -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]}
+    wal -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]}
   ##  cat ~/.cache/wal/color.leftwm-theme.toml &&
+    #xrdb -merge ~/.Xresources &&
     bat ~/.cache/wal/color.leftwm-theme.toml &&               
     cp -f ~/.cache/wal/color.leftwm-theme.toml $HOME/.config/leftwm/themes/current/theme.toml &&
+    
     leftwm command "LoadTheme $HOME/.config/leftwm/themes/current/theme.toml"
 fi

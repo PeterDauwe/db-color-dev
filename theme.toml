@@ -1,5 +1,27 @@
 border_width = 6
 margin = [4, 4]
-default_border_color = "#0a0a0b"
-floating_border_color = "#A03D32"
-focused_border_color = "#B49370"
+default_border_color = "#0A0208"
+floating_border_color = "#6696D8"
+focused_border_color = "#e2c7e6"
+
+
+col1 = "#61329B"
+col2 = "#4E3DA9"
+col3 = "#A02F99"
+col4 = "#A147B6"
+col5 = "#BE4CB6"
+col6 = "#6696D8"
+col7 = "#e2c7e6"
+col8 = "#9e8ba1"
+col9 = "#61329B"
+col10 = "#4E3DA9"
+col11 = "#A02F99"
+col12 = "#A147B6"
+col13 = "#BE4CB6"
+col14 = "#6696D8"
+col15 = "#e2c7e6"
+
+
+
+background = "#0A0208"
+foreground = "#e2c7e6"
