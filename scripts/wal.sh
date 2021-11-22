@@ -20,4 +20,11 @@ if [ -x "$(command -v wal)" ]; then
     cp -f ~/.cache/wal/color.leftwm-theme.toml $HOME/.config/leftwm/themes/current/theme.toml &&
     
     leftwm command "LoadTheme $HOME/.config/leftwm/themes/current/theme.toml"
+
+else
+
+  # Set background
+  if [ -x "$(command -v feh)" ]; then
+    feh --randomize --bg-fill /usr/share/backgrounds/*
+  fi
 fi
