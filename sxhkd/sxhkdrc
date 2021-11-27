@@ -400,7 +400,7 @@ super + y
 
 #Picom Toggle
 ctrl + alt + o
-    ~/.config/leftwm/scripts/picom-toggle.sh
+    ~/.config/leftwm/themes/current/scripts/picom-toggle.sh
 
 #################################################################
 # SUPER + KEYS
