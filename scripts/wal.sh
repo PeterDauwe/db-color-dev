@@ -13,7 +13,7 @@ if [ -x "$(command -v wal)" ]; then
   fi
     my_array=(/usr/share/backgrounds/*)
     #wal -t -e -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]}
-    wal -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]}
+    wal -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]} -a 80
     cat ~/.cache/wal/color.leftwm-theme.toml &&
   ##  bat ~/.cache/wal/color.leftwm-theme.toml &&               
     cp -f ~/.cache/wal/color.leftwm-theme.toml $HOME/.config/leftwm/themes/current/theme.toml &&
