@@ -8,17 +8,21 @@ if [ -f "/tmp/leftwm-theme-down" ]; then
 fi
 ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
+########## This script makes the colors of your polybar and terminals#########
+sh $SCRIPTPATH/scripts/wal.sh
+
+
 #change your keyboard if you need it - azerty or qwerty
 #setxkbmap -layout be
 keybLayout=$(setxkbmap -v | awk -F "+" '/symbols/ {print $2}')
 
-##if [ $keybLayout = "be" ]; then
-##  cp "$SCRIPTPATH"/config/config-azerty.toml ~/.config/leftwm/config.toml
-##  leftwm-command "LoadTheme "$SCRIPTPATH"/config/config-azerty.toml"
-##else
-##  cp "$SCRIPTPATH"/config/config-qwerty.toml ~/.config/leftwm/config.toml
-##  leftwm-command "LoadTheme "$SCRIPTPATH"/config/config-querty.toml"
-##fi
+if [ $keybLayout = "be" ]; then
+  cp "$SCRIPTPATH"/config/config-azerty.toml ~/.config/leftwm/config.toml
+  leftwm-command "LoadTheme "$SCRIPTPATH"/config/config-azerty.toml"
+else
+  cp "$SCRIPTPATH"/config/config-qwerty.toml ~/.config/leftwm/config.toml
+  leftwm-command "LoadTheme "$SCRIPTPATH"/config/config-querty.toml"
+fi
 
 # keybindings daemon
 # put your personal keybinds inside your theme and use those
@@ -61,10 +65,6 @@ if [ -x "$(command -v picom)" ]; then
 elif [ -x "$(command -v compton)" ]; then
   compton --config $HOME/.config/leftwm/themes/current/compton.conf &> /dev/null &
 fi
-
-
-########## This script makes the colors of your polybar and terminals#########
-sh $SCRIPTPATH/scripts/wal.sh
 
 #Set the theme.toml config
 echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
