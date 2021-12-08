@@ -10,7 +10,7 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
 ########## This script makes the colors of your polybar and terminals#########
 sh $SCRIPTPATH/scripts/wal.sh
-
+##############################################################################
 
 #change your keyboard if you need it - azerty or qwerty
 #setxkbmap -layout be

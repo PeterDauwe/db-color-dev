@@ -11,7 +11,7 @@ if [ -x "$(command -v wal)" ]; then
     [ ! -f $HOME/.config/wal/templates/color.leftwm-theme.toml ] ; then
         cp -f $HOME/.config/leftwm/themes/current/template-wal/color.leftwm-theme.toml  $HOME/.config/wal/templates
   fi
-    my_array=(/usr/share/backgrounds/*)
+    my_array=(~/.backgrounds/*)
     #wal -t -e -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]}
     wal -i ${my_array[$(( $RANDOM % ${#my_array[@]}))]} -a 80
     cat ~/.cache/wal/color.leftwm-theme.toml &&
