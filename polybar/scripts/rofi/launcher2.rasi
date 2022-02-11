@@ -24,6 +24,10 @@ configuration {
   text-color: #eeeeee;
 }
 
+prompt {
+    background-color:               @transparent;
+    text-color:                     @foreground;
+}
 
 window {
     transparency:                   "real";
@@ -87,7 +91,7 @@ mainbox {
 element {
     background-color:               @al;
     text-color:                     #eeeeee;
-    orientation:                    horizontal;
+    orientation:                    vertical;
     border-radius:                  5%;
     padding:                        2% 1% 2% 1%;
 }
@@ -98,7 +102,7 @@ element-icon {
 }
 
 element-text {
-    expand:                         true;
+    expand:                         false;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     margin:                         0.5% 0.5% -0.5% 0.5%;
